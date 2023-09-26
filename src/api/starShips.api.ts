@@ -28,6 +28,6 @@ export function getStarShips(
   search?: string,
   cancelToken?: CancelToken,
 ): Promise<ListRepose<StarshipDto>> {
-  let searchQ = search ? `&search=${search}` : '';
+  const searchQ = search ? `&search=${search}` : '';
   return httpApi.get(`/vehicles/?page=${page}${searchQ}`, { cancelToken }).then(({ data }) => data);
 }

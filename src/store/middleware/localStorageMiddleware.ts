@@ -4,7 +4,7 @@ import type { RootState } from '../store';
 import { EDITED_CHARACTERS_LS_KEY } from '../slices/characterSlice/constants';
 
 export const localStorageMiddleware: Middleware = (store) => (next) => (action) => {
-  let result = next(action);
+  const result = next(action);
 
   if (action.type === actions.character.updateCharacter.type || action.type === actions.character.resetCharacter.type) {
     const state = store.getState() as RootState;

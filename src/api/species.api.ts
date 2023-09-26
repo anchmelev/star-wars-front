@@ -21,6 +21,6 @@ export interface SpeciesDto {
 }
 
 export function getSpecies(page: number, search?: string, cancelToken?: CancelToken): Promise<ListRepose<SpeciesDto>> {
-  let searchQ = search ? `&search=${search}` : '';
+  const searchQ = search ? `&search=${search}` : '';
   return httpApi.get(`/species/?page=${page}${searchQ}`, { cancelToken }).then(({ data }) => data);
 }

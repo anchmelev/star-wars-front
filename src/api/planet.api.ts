@@ -20,6 +20,6 @@ export interface PlanetDto {
 }
 
 export function getPlanets(page: number, search?: string, cancelToken?: CancelToken): Promise<ListRepose<PlanetDto>> {
-  let searchQ = search ? `&search=${search}` : '';
+  const searchQ = search ? `&search=${search}` : '';
   return httpApi.get(`/planets/?page=${page}${searchQ}`, { cancelToken }).then(({ data }) => data);
 }

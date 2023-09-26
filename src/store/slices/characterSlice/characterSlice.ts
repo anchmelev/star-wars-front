@@ -8,7 +8,9 @@ let editedById: Record<number, Character> = {};
 try {
   const val = localStorage.getItem(EDITED_CHARACTERS_LS_KEY);
   if (val) editedById = JSON.parse(val);
-} catch (error) {}
+} catch (error) {
+  console.error(error);
+}
 
 const initialState: CharacterState = {
   linksByUrl: {},

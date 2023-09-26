@@ -29,7 +29,7 @@ export interface CharacterDto {
 }
 
 export function getCharacters(page: number, search?: string): Promise<ListRepose<CharacterDto>> {
-  let searchQ = search ? `&search=${search}` : '';
+  const searchQ = search ? `&search=${search}` : '';
   return httpApi.get(`/people/?page=${page}${searchQ}`).then(({ data }) => data);
 }
 

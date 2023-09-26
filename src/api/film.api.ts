@@ -20,6 +20,6 @@ export interface FilmDto {
 }
 
 export function getFilms(page: number, search?: string, cancelToken?: CancelToken): Promise<ListRepose<FilmDto>> {
-  let searchQ = search ? `&search=${search}` : '';
+  const searchQ = search ? `&search=${search}` : '';
   return httpApi.get(`/films/?page=${page}${searchQ}`, { cancelToken }).then(({ data }) => data);
 }

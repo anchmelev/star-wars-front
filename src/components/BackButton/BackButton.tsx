@@ -10,6 +10,6 @@ export type BackButtonProps = ButtonProps & {
 
 export const BackButton: React.FC<BackButtonProps> = ({ to, ...props }) => {
   const navigate = useNavigate();
-  const path: any = to || -1;
+  const path = (to || -1) as unknown as number;
   return <S.Button shape="circle" size="small" icon={<LeftOutlined />} onClick={() => navigate(path)} {...props} />;
 };
