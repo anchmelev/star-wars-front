@@ -12,6 +12,7 @@ import { getCharacters } from '@app/api/character.api';
 import { useDebounce } from 'use-debounce';
 import { Character } from '@app/store/slices/characterSlice/types';
 import unionBy from 'lodash/unionBy';
+import { QUERY_STALE_TIME } from '../constants';
 
 export const CharacterList: React.FC = () => {
   const { currentPage, search, editedById } = useAppSelector((state) => state.character);
@@ -21,8 +22,10 @@ export const CharacterList: React.FC = () => {
 
   const hasSearch = useMemo(() => debouncedSearch.trim().length > 0, [debouncedSearch]);
 
-  const { data, isLoading } = useQuery(['characters', currentPage, debouncedSearch], () =>
-    getCharacters(currentPage, debouncedSearch),
+  const { data, isLoading } = useQuery(
+    ['characters', currentPage, debouncedSearch],
+    () => getCharacters(currentPage, debouncedSearch),
+    { staleTime: QUERY_STALE_TIME },
   );
 
   useEffect(() => {

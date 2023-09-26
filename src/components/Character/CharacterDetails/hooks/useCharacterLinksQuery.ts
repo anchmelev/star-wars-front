@@ -1,7 +1,7 @@
 import { getCharacterLinks } from '@app/api/character.api';
 import { Character, CharacterLink } from '@app/store/slices/characterSlice/types';
 import { useQuery } from 'react-query';
-import { QUERY_STALE_TIME } from '../constants';
+import { QUERY_STALE_TIME } from '../../constants';
 import { useAppSelector } from '@app/hooks/storeHooks';
 
 const opt = { staleTime: QUERY_STALE_TIME };

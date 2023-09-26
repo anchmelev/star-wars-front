@@ -10,7 +10,7 @@ import { useQuery } from 'react-query';
 import { getCharacter } from '@app/api/character.api';
 import { createCharacter } from '@app/store/slices/characterSlice/characterSlice';
 import { useCharacterLinkQueries } from './hooks/useCharacterLinksQuery';
-import { QUERY_STALE_TIME } from './constants';
+import { QUERY_STALE_TIME } from '../constants';
 import { actions } from '@app/store/slices/rootReducer';
 
 interface CharacterDetailsProps {
