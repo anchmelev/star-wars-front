@@ -8,7 +8,7 @@ export const LayoutMaster = styled(Layout)`
 
 export const LayoutMain = styled(Layout)`
   @media only screen and ${media.md} {
-    /* margin-left: 80px; */
+    margin-left: 80px;
   }
 
   @media only screen and ${media.xl} {
@@ -17,7 +17,11 @@ export const LayoutMain = styled(Layout)`
 `;
 
 export const Header = styled(Layout.Header)`
+  display: flex;
   line-height: 1.5;
+  padding-left: 0.5em;
+  padding-right: 1.25em;
+  /* height: 56px; */
 
   @media only screen and ${media.md} {
     padding: ${LAYOUT.desktop.paddingVertical} ${LAYOUT.desktop.paddingHorizontal};
@@ -27,12 +31,13 @@ export const Header = styled(Layout.Header)`
 
 export const MainContent = styled(Layout.Content)`
   padding: ${LAYOUT.mobile.paddingVertical} ${LAYOUT.mobile.paddingHorizontal};
+  padding-top: 0;
   overflow: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 
   @media only screen and ${media.md} {
-    padding: ${LAYOUT.desktop.paddingVertical} ${LAYOUT.desktop.paddingHorizontal};
+    padding: 0 ${LAYOUT.desktop.paddingHorizontal};
   }
 `;

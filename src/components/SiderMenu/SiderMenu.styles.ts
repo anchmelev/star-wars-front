@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { FONT_SIZE } from '@app/styles/constants';
+import { COLORS } from '@app/styles/constants';
 import { Menu as AntMenu } from 'antd';
 
 export const Menu = styled(AntMenu)`
@@ -13,7 +13,7 @@ export const Menu = styled(AntMenu)`
 
   .ant-menu-item,
   .ant-menu-submenu {
-    font-size: ${FONT_SIZE.xs};
+    font-size: 0.875rem;
   }
 
   .ant-menu-item-icon {
@@ -26,8 +26,8 @@ export const Menu = styled(AntMenu)`
   a,
   .ant-menu-item,
   .ant-menu-submenu {
-    color: var(--text-sider-secondary-color);
-    fill: var(--text-sider-secondary-color);
+    color: ${COLORS.textSiderSecondary};
+    fill: ${COLORS.textSiderSecondary};
   }
 
   .ant-menu-item:hover,
@@ -38,20 +38,20 @@ export const Menu = styled(AntMenu)`
     a,
     .ant-menu-item-icon,
     .ant-menu-title-content {
-      color: var(--text-sider-primary-color);
-      fill: var(--text-sider-primary-color);
+      color: ${COLORS.textSiderPrimary};
+      fill: ${COLORS.textSiderPrimary};
     }
   }
 
   .ant-menu-submenu-selected {
     .ant-menu-submenu-title {
-      color: var(--text-sider-primary-color);
+      color: ${COLORS.textSiderPrimary};
 
       .ant-menu-submenu-expand-icon,
       .ant-menu-submenu-arrow,
       span[role='img'] {
-        color: var(--text-sider-primary-color);
-        fill: var(--text-sider-primary-color);
+        color: ${COLORS.textSiderPrimary};
+        fill: ${COLORS.textSiderPrimary};
       }
     }
   }
@@ -64,8 +64,8 @@ export const Menu = styled(AntMenu)`
     span[role='img'],
     .ant-menu-item-icon,
     a {
-      color: var(--text-sider-primary-color);
-      fill: var(--text-sider-primary-color);
+      color: ${COLORS.textSiderPrimary};
+      fill: ${COLORS.textSiderPrimary};
     }
   }
 

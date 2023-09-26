@@ -1,0 +1,1 @@
+export const QUERY_STALE_TIME = 3600000;

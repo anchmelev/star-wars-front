@@ -1,5 +1,6 @@
 import React from 'react';
-import { Row, Col } from 'antd';
+import * as S from './Header.styles';
+import { Logo } from '../MainSider/Logo/Logo';
 
 interface HeaderProps {
   toggleSider: () => void;
@@ -8,22 +9,12 @@ interface HeaderProps {
 
 export const Header: React.FC<HeaderProps> = ({ toggleSider, isSiderOpened }) => {
   return (
-    <Row justify="space-between" align="middle">
-      <Col></Col>
-
-      <Col>
-        <Row align="middle">
-          <Col></Col>
-
-          <Col></Col>
-
-          <Col></Col>
-        </Row>
-      </Col>
+    <S.Container justify="space-between" align="middle">
+      <Logo />
 
       <S.BurgerCol>
         <S.MobileBurger onClick={toggleSider} isCross={isSiderOpened} />
       </S.BurgerCol>
-    </Row>
+    </S.Container>
   );
 };

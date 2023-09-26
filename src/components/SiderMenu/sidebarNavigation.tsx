@@ -6,11 +6,8 @@ export interface SidebarNavigationItem {
   title: string;
   key: string;
   url?: string;
-  children?: SidebarNavigationItem[];
   icon?: React.ReactNode;
 }
-
-console.log('Page', Page);
 
 export const sidebarNavigation: SidebarNavigationItem[] = [
   {

@@ -6,7 +6,7 @@ interface BurgerProps {
   onClick: () => void;
 }
 
-export const Burger: React.FC<BurgerProps> = ({ className, onClick }) => (
+const Burger: React.FC<BurgerProps> = ({ className, onClick }) => (
   <svg width="1em" height="1em" viewBox="280 215 400 220" fill="currentColor" className={className} onClick={onClick}>
     <path d="M300,220 C300,220 520,220 540,220 C740,220 640,540 520,420 C440,340 300,200 300,200" id="top" />
     <path d="M300,320 L540,320" id="middle" />
@@ -20,6 +20,7 @@ export const Burger: React.FC<BurgerProps> = ({ className, onClick }) => (
 
 export const BurgerIcon = styled(Burger)<{ isCross: boolean }>`
   cursor: pointer;
+  margin-top: 4px;
   transform: translate3d(0, 0, 0);
 
   path {

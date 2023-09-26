@@ -1,17 +1,9 @@
-import { menuSlice } from './menuSlice';
-import { swCharacterSelectors } from './swCharacterSlice/swCharacterSelectors';
-import { swCharacterSlice } from './swCharacterSlice/swCharacterSlice';
+import { characterSlice } from './characterSlice/characterSlice';
 
 export const rootReducer = {
-  menu: menuSlice.reducer,
-  swCharacter: swCharacterSlice.reducer,
+  character: characterSlice.reducer,
 };
 
 export const actions = {
-  menu: menuSlice.actions,
-  swCharacter: swCharacterSlice.actions,
-};
-
-export const selectors = {
-  swCharacter: swCharacterSelectors,
+  character: characterSlice.actions,
 };

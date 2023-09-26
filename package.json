@@ -1,7 +1,7 @@
 {
-  "name": "sw-front",
+  "name": "star-wars-front",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,7 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "lodash": "^4.17.21",
     "@reduxjs/toolkit": "^1.9.5",
+    "axios": "^1.5.0",
     "antd": "^5.9.2",
     "react-dom": "^18.2.0",
     "react-helmet-async": "^1.3.0",
@@ -18,9 +20,12 @@
     "react": "^18.2.0",
     "styled-components": "^6.0.7",
     "react-router-dom": "^6.16.0",
-    "react-responsive": "^9.0.2"
+    "react-responsive": "^9.0.2",
+    "react-query": "3.39.3",
+    "use-debounce": "9.0.4"
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.199",
     "@types/react-responsive": "^8.0.5",
     "@types/react-router-dom": "^5.3.3",
     "@types/react-dom": "^18.2.7",

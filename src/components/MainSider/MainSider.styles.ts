@@ -1,10 +1,9 @@
 import styled, { css } from 'styled-components';
-import { Link } from 'react-router-dom';
-import { media, LAYOUT } from '@app/styles/constants';
+import { media, LAYOUT, COLORS } from '@app/styles/constants';
 import { Button, Layout } from 'antd';
 
-export const Sider = styled(Layout.Sider)`
-  position: fixed;
+export const Sider = styled(Layout.Sider)<{ $fixed: boolean }>`
+  position: ${(props) => (props.$fixed ? `relative` : 'fixed!important')};
   overflow: visible;
   right: 0;
   z-index: 5;
@@ -24,9 +23,6 @@ export const Sider = styled(Layout.Sider)`
 `;
 
 export const CollapseButton = styled(Button)<{ $isCollapsed: boolean }>`
-  background: var(--collapse-background-color);
-
-  border: 1px solid var(--border-color);
   transition: all 0.2s ease;
   position: absolute;
   right: 0.5rem;
@@ -34,21 +30,15 @@ export const CollapseButton = styled(Button)<{ $isCollapsed: boolean }>`
   ${(props) =>
     props.$isCollapsed &&
     css`
-      right: -1rem;
+      right: -0.75rem;
     `}
 
-  color: var(--text-secondary-color);
-
   &:hover {
-    color: var(--text-secondary-color);
-    background: var(--primary-color);
-    border: 1px solid var(--border-color);
+    color: ${COLORS.textSecondary};
   }
 
   &:focus {
-    color: var(--text-secondary-color);
-    background: var(--primary-color);
-    border: 1px solid var(--border-color);
+    color: ${COLORS.primary};
   }
 `;
 
@@ -62,16 +52,11 @@ export const SiderContent = styled.div`
   }
 `;
 
-export const SiderLogoLink = styled(Link)`
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-  position: relative;
-`;
-
 export const SiderLogoDiv = styled.div`
   height: ${LAYOUT.mobile.headerHeight};
-  padding: ${LAYOUT.mobile.headerPadding};
+  max-height: ${LAYOUT.mobile.headerHeight};
+  padding: 0 ${LAYOUT.mobile.headerPadding};
+  margin-top: 0.15em;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -81,11 +66,4 @@ export const SiderLogoDiv = styled.div`
     padding-top: ${LAYOUT.desktop.paddingVertical};
     padding-bottom: ${LAYOUT.desktop.paddingVertical};
   }
-`;
-
-export const BrandSpan = styled.span`
-  margin: 0 1rem;
-  font-weight: 700;
-  font-size: 1.125rem;
-  color: var(--white);
 `;

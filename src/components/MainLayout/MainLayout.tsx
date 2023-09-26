@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import * as S from './MainLayout.styles';
 import { Outlet } from 'react-router-dom';
-import MainSider from '@app/components/MainSider/MainSider';
+import { MainSider } from '@app/components/MainSider/MainSider';
 import { useResponsive } from '@app/hooks/useResponsive';
 import { Header } from '@app/components/MainHeader/Header';
 
@@ -20,7 +20,7 @@ export const MainLayout: React.FC = () => {
             <Header toggleSider={toggleSider} isSiderOpened={!siderCollapsed} />
           </S.Header>
         )}
-        <S.MainContent id="main-content">
+        <S.MainContent>
           <div>
             <Outlet />
           </div>

@@ -1,16 +1,25 @@
-export const BORDER_RADIUS = "8px";
+export const BORDER_RADIUS = '8px';
+
+export const COLORS = {
+  primary: '#ffa001',
+  secondary: '#339CFD',
+  textSecondary: '#ffffff',
+  textSiderPrimary: '#ffa001',
+  textSiderSecondary: '#ffffff',
+  tagColor: 'blue',
+} as const;
 
 export const LAYOUT = {
   mobile: {
-    paddingVertical: "0.75rem",
-    paddingHorizontal: "1rem",
-    headerHeight: "4.25rem",
-    headerPadding: "1rem",
+    paddingVertical: '0.75rem',
+    paddingHorizontal: '1rem',
+    headerHeight: '4.25rem',
+    headerPadding: '1rem',
   },
   desktop: {
-    paddingVertical: "1.25rem",
-    paddingHorizontal: "2.25rem",
-    headerHeight: "5.625rem",
+    paddingVertical: '1.25rem',
+    paddingHorizontal: '2.25rem',
+    headerHeight: '5.625rem',
   },
 } as const;
 
@@ -23,19 +32,7 @@ export const BREAKPOINTS = {
   xxl: 1920,
 } as const;
 
-export const FONT_SIZE = {
-  xxs: "0.75rem",
-  xs: "0.875rem",
-  md: "1rem",
-  lg: "1.125rem",
-  xl: "1.25rem",
-  xxl: "1.5rem",
-  xxxl: "1.625rem",
-  xxxxl: "2rem",
-} as const;
-
-const getMedia = <T extends number>(breakpoint: T): `(min-width: ${T}px)` =>
-  `(min-width: ${breakpoint}px)`;
+const getMedia = <T extends number>(breakpoint: T): `(min-width: ${T}px)` => `(min-width: ${breakpoint}px)`;
 
 export const media = {
   xs: getMedia(BREAKPOINTS.xs),
